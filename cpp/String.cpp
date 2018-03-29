@@ -7,7 +7,7 @@
 /// @brief Run the tests
 void String()
 {
-	char* null = nullptr;
+    char* null = nullptr;
     try
     {
         std::string strFromNull(null);
@@ -15,5 +15,5 @@ void String()
     catch (std::exception& ex)
     {
         std::cout << "strFromNull caught " << ex.what() << std::endl;
-	}
+    }
 }
