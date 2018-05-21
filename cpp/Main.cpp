@@ -19,6 +19,7 @@ extern void Array();
 extern void MostVexingParse();
 extern void SpecialMemberFuncs();
 extern void Tuple();
+extern void TimeLimitedAssert();
 
 void DisplayMenu(const Registrar& registrar);
 bool GetSelection(unsigned int& selection);
@@ -36,6 +37,7 @@ int main()
     registrar.RegisterFunction("Most Vexing Parse", Registrar::ExampleFunction(&MostVexingParse));
     registrar.RegisterFunction("Special Member Functions", Registrar::ExampleFunction(&SpecialMemberFuncs));
     registrar.RegisterFunction("Tuple", Registrar::ExampleFunction(&Tuple));
+    registrar.RegisterFunction("Time Limited Assert", Registrar::ExampleFunction(&TimeLimitedAssert));
 
     while (true)
     {

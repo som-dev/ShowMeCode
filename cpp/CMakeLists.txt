@@ -7,3 +7,6 @@ file(GLOB ShowMeCpp_HEADERS "*.hpp")
 
 include_directories("./")
 add_executable(ShowMeCpp ${ShowMeCpp_SOURCES}) 
+
+find_package(Threads)
+target_link_libraries(ShowMeCpp ${CMAKE_THREAD_LIBS_INIT})
