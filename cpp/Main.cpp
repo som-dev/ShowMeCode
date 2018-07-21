@@ -20,6 +20,8 @@ extern void MostVexingParse();
 extern void SpecialMemberFuncs();
 extern void Tuple();
 extern void TimeLimitedAssert();
+extern void FloatingPoint();
+extern void StringSplit();
 
 void DisplayMenu(const Registrar& registrar);
 bool GetSelection(unsigned int& selection);
@@ -38,7 +40,8 @@ int main()
     registrar.RegisterFunction("Special Member Functions", Registrar::ExampleFunction(&SpecialMemberFuncs));
     registrar.RegisterFunction("Tuple", Registrar::ExampleFunction(&Tuple));
     registrar.RegisterFunction("Time Limited Assert", Registrar::ExampleFunction(&TimeLimitedAssert));
-
+    registrar.RegisterFunction("Floating Point", Registrar::ExampleFunction(&FloatingPoint));
+    registrar.RegisterFunction("String Split", Registrar::ExampleFunction(&StringSplit));
     while (true)
     {
         DisplayMenu(registrar);
@@ -59,7 +62,7 @@ int main()
             std::cout << selection << " is not a valid example. Please try again." << std::endl;
         }
     }
-        
+
     return 0;
 }
 
@@ -86,5 +89,3 @@ bool GetSelection(unsigned int& selection)
     selection = atoi(input.c_str());
     return true;
 }
-
-
