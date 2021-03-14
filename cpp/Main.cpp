@@ -22,6 +22,7 @@ extern void Tuple();
 extern void TimeLimitedAssert();
 extern void FloatingPoint();
 extern void StringSplit();
+extern void Types();
 
 void DisplayMenu(const Registrar& registrar);
 bool GetSelection(unsigned int& selection);
@@ -42,6 +43,7 @@ int main()
     registrar.RegisterFunction("Time Limited Assert", Registrar::ExampleFunction(&TimeLimitedAssert));
     registrar.RegisterFunction("Floating Point", Registrar::ExampleFunction(&FloatingPoint));
     registrar.RegisterFunction("String Split", Registrar::ExampleFunction(&StringSplit));
+    registrar.RegisterFunction("Types", Registrar::ExampleFunction(&Types));
     while (true)
     {
         DisplayMenu(registrar);
@@ -69,7 +71,7 @@ int main()
 void DisplayMenu(const Registrar& registrar)
 {
     std::cout << std::endl << "Select an example or Q to quit:" << std::endl;
-    for (auto i = 0; i < registrar.Size(); ++i)
+    for (size_t i = 0; i < registrar.Size(); ++i)
     {
         std::cout << i+1 << ": " << registrar.GetName(i) << std::endl;
     }
